@@ -3,6 +3,7 @@
 
 ## 2. uruchomienie backendu:
 `cd server`
+`npm install`
 `node index.js`
 
 ## 3. Należy utworzyć usera1 i usera2
