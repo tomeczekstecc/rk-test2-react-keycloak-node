@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-
   react-app:
     container_name: rk-test2
     build:
@@ -14,8 +13,17 @@ services:
       - react-app-data:/app/node_modules
     depends_on:
       - keycloack
+      # - server-app
 
-  
+  # server-app:
+  #   build:
+  #     context: ./server
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 5000:5000
+  #   volumes:
+  #     - /app/node_modules
+  #     - .data/server:/var/lib/data
 
   keycloack:
     image: jboss/keycloak
