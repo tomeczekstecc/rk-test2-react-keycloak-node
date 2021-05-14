@@ -13,17 +13,17 @@ services:
       - react-app-data:/app/node_modules
     depends_on:
       - keycloack
-      # - server-app
+      - server-app
 
-  # server-app:
-  #   build:
-  #     context: ./server
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - 5000:5000
-  #   volumes:
-  #     - /app/node_modules
-  #     - .data/server:/var/lib/data
+  server-app:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - /app/node_modules
+      - .data/server:/var/lib/data
 
   keycloack:
     image: jboss/keycloak
